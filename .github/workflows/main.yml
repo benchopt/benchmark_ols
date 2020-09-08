@@ -33,4 +33,5 @@ jobs:
         flake8 .
     - name: Test
       run: |
+        pip install pytest
         benchopt test .
