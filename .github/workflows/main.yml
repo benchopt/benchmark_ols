@@ -26,7 +26,7 @@ jobs:
     - name: Install dependencies
       run: |
         # $CONDA is an environment variable pointing to the root of the miniconda directory
-        # $CONDA/bin/conda activate base
+        eval "$(conda shell.bash hook)"
         conda activate base
         pip install -U https://api.github.com/repos/benchopt/benchOpt/zipball/CLN_remove_benchmarks
     - name: Lint with flake8
@@ -35,6 +35,7 @@ jobs:
         flake8 .
     - name: Test
       run: |
+        eval "$(conda shell.bash hook)"
         conda activate base
         which benchopt
         which python
