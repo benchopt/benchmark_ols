@@ -27,6 +27,7 @@ jobs:
       run: |
         # $CONDA is an environment variable pointing to the root of the miniconda directory
         # $CONDA/bin/conda activate base
+        conda activate base
         pip install -U https://api.github.com/repos/benchopt/benchOpt/zipball/CLN_remove_benchmarks
     - name: Lint with flake8
       run: |
@@ -34,8 +35,10 @@ jobs:
         flake8 .
     - name: Test
       run: |
+        conda activate base
         which benchopt
         which python
         which conda
+        conda env list
         benchopt test . --env-name benchopt_ols_test_env -vl
         benchopt test . --env-name benchopt_ols_test_env -vl --skip-install
