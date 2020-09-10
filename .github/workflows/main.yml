@@ -28,6 +28,7 @@ jobs:
         # $CONDA is an environment variable pointing to the root of the miniconda directory
         eval "$(conda shell.bash hook)"
         conda activate base
+        pip install --upgrade pip
         pip install -U https://api.github.com/repos/benchopt/benchOpt/zipball/CLN_remove_benchmarks
     - name: Lint with flake8
       run: |
