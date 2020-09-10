@@ -22,10 +22,11 @@ jobs:
       uses: actions/setup-python@v2
       with:
         python-version: 3.8
+
     - name: Install dependencies
       run: |
         # $CONDA is an environment variable pointing to the root of the miniconda directory
-        # $CONDA/bin/conda env update --file environment.yml --name base
+        # $CONDA/bin/conda activate base
         pip install -U https://api.github.com/repos/benchopt/benchOpt/zipball/CLN_remove_benchmarks
     - name: Lint with flake8
       run: |
@@ -33,6 +34,8 @@ jobs:
         flake8 .
     - name: Test
       run: |
-        pip install pytest
+        which benchopt
+        which python
+        which conda
         benchopt test . --env-name benchopt_ols_test_env -vl
         benchopt test . --env-name benchopt_ols_test_env -vl --skip-install
