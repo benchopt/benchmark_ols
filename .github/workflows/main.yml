@@ -34,4 +34,5 @@ jobs:
     - name: Test
       run: |
         pip install pytest
-        benchopt test . --env-name benchopt_ols_test_env
+        benchopt test . --env-name benchopt_ols_test_env -vl
+        benchopt test . --env-name benchopt_ols_test_env -vl --skip-install
