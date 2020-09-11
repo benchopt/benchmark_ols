@@ -5,8 +5,8 @@ from benchopt.base import BaseSolver
 
 
 class Solver(BaseSolver):
-    """Baseline is gradient descent, optionally accelerated."""
-    name = 'Baseline'
+    """Gradient descent solver, optionally accelerated."""
+    name = 'GD'
 
     # any parameter defined here is accessible as a class attribute
     parameters = {'use_acceleration': [False, True]}
