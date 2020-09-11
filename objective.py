@@ -14,7 +14,7 @@ class Objective(BaseObjective):
     def set_data(self, X, y):
         self.X, self.y = X, y
 
-    def __call__(self, beta):
+    def compute(self, beta):
         diff = self.y - self.X.dot(beta)
         return .5 * diff.dot(diff)
 
