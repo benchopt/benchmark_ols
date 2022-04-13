@@ -29,7 +29,7 @@ class Solver(BaseSolver):
             grad=GradBasic(
                 input_data=self.y,
                 op=lambda w: self.X @ w,
-                trans_op=lambda w: self.X.T @ w,
+                trans_op=lambda v: self.X.T @ v,
                 input_data_writeable=True,
             ),
             prox=IdentityProx(),
