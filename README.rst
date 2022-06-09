@@ -1,11 +1,11 @@
-Benchmark repository for Ordinary Least Square
-==============================================
+Benchmark repository for Ordinary Least Squares
+===============================================
 
 |Build Status| |Python 3.6+|
 
-BenchOpt is a package to simplify and make more transparent and
+Benchopt is a package to simplify and make more transparent and
 reproducible the comparisons of optimization algorithms.
-The Ordinary Least Square consists in solving the following program:
+The Ordinary Least Squares consists in solving the following program:
 
 
 $$\\min_{w} \\frac{1}{2} \\Vert y - Xw \\Vert_2^2$$
