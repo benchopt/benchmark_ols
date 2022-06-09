@@ -1,21 +1,19 @@
-Benchmark repository for Ordinary Least Square
-==============================================
+Benchmark repository for Ordinary Least Squares
+===============================================
 
 |Build Status| |Python 3.6+|
 
-BenchOpt is a package to simplify and make more transparent and
+Benchopt is a package to simplify and make more transparent and
 reproducible the comparisons of optimization algorithms.
-The Ordinary Least Square consists in solving the following program:
+The Ordinary Least Squares consists in solving the following program:
 
-.. math::
 
-    \min_{w} \frac{1}{2} \|y - Xw\|^2_2
+$$\\min_{w} \\frac{1}{2} \\Vert y - Xw \\Vert_2^2$$
 
-where n (or n_samples) stands for the number of samples, p (or n_features) stands for the number of features and
+where $n$ (or ``n_samples``) stands for the number of samples, $p$ (or ``n_features``) stands for the number of features and
 
-.. math::
 
- y \in \mathbb{R}^n, X = [x_1^\top, \dots, x_n^\top]^\top \in \mathbb{R}^{n \times p}
+$$y \\in \\mathbb{R}^n, \\ X \\in \\mathbb{R}^{n \\times p}$$
 
 Install
 --------
@@ -26,16 +24,17 @@ This benchmark can be run using the following commands:
 
    $ pip install -U benchopt
    $ git clone https://github.com/benchopt/benchmark_ols
-   $ benchopt run benchmark_ols
+   $ cd benchmark_ols
+   $ benchopt run .
 
-Apart from the problem, options can be passed to `benchopt run`, to restrict the benchmarks to some solvers or datasets, e.g.:
+Apart from the problem, options can be passed to ``benchopt run``, to restrict the benchmarks to some solvers or datasets, e.g.:
 
 .. code-block::
 
-	$ benchopt run benchmark_ols -s sklearn -d boston --max-runs 10 --n-repetitions 10
+	$ benchopt run . -s sklearn -d boston --max-runs 10 --n-repetitions 10
 
 
-Use `benchopt run -h` for more details about these options, or visit https://benchopt.github.io/api.html.
+Use ``benchopt run -h`` for more details about these options, or visit https://benchopt.github.io/api.html.
 
 .. |Build Status| image:: https://github.com/benchopt/benchmark_ols/workflows/Tests/badge.svg
    :target: https://github.com/benchopt/benchmark_ols/actions
