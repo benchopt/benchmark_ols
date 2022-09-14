@@ -1,4 +1,7 @@
-from benchopt import BaseObjective
+from benchopt import BaseObjective, safe_import_context
+
+with safe_import_context() as ctx:
+    import numpy as np
 
 
 class Objective(BaseObjective):
@@ -20,3 +23,6 @@ class Objective(BaseObjective):
 
     def to_dict(self):
         return dict(X=self.X, y=self.y, fit_intercept=self.fit_intercept)
+
+    def get_one_solution(self):
+        return np.zeros(self.X.shape[1])
