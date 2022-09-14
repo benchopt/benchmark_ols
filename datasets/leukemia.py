@@ -23,4 +23,3 @@ class Dataset(BaseDataset):
         X = X.to_numpy()
         y = LabelBinarizer().fit_transform(y)[:, 0].astype(X.dtype)
         return dict(X=X, y=y)
-
