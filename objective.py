@@ -5,6 +5,7 @@ with safe_import_context() as ctx:
 
 
 class Objective(BaseObjective):
+    min_benchopt_version = "1.3"
     name = "Ordinary Least Squares"
 
     parameters = {
