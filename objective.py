@@ -21,7 +21,7 @@ class Objective(BaseObjective):
         diff = self.y - self.X.dot(beta)
         return .5 * diff.dot(diff)
 
-    def to_dict(self):
+    def get_objective(self):
         return dict(X=self.X, y=self.y, fit_intercept=self.fit_intercept)
 
     def get_one_solution(self):
